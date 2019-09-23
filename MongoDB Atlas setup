@@ -1,0 +1,11 @@
+1. Visit mongodb.com
+2. Download MongoDB or use MongoDB Atlas (A Cloud Solution)
+3. Sign-in to MongoDB Atlas.
+4. Create new project.
+5. Create new clusture --> Choose AWS --> Leave default settings and click create cluster.
+   clusture - Which is a combination of multiple servers and hosts MongoDB database.
+6. Create new MongoDB user under Security --> Database Access.
+   Enter username --> Enter/autogenerate password(keep a note of this password) --> Select User Privileges as Read and write to any database --> click Add User.
+7. Add IP address under Security --> Network Access --> IP Whitelist.
+   Add current/remote IP address (Only requests from this IP address will be able to access the database).
+   Your current IP address might change over the period of time. Hence you should update that "IP Whitelist" if you're facing any connection issues!

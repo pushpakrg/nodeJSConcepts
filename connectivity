@@ -1,4 +1,11 @@
 const mongoose = require("mongoose");
 
-const connectionString = "...";
-mongoose.connect(connectionString);
+<!-- Replace created password with <password>.
+     connect method returns promise. -->
+mongoose.connect("mongodb+srv://pushpak:<password>@todocluster-d8kxy.mongodb.net/test?retryWrites=true&w=majority")
+  .then(() => {
+    console.log("Connected to database!");
+  })
+  .catch(() => {
+    console.log("Connection failed!");
+  });

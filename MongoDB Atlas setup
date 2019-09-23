@@ -9,3 +9,5 @@
 7. Add IP address under Security --> Network Access --> IP Whitelist.
    Add current/remote IP address (Only requests from this IP address will be able to access the database).
    Your current IP address might change over the period of time. Hence you should update that "IP Whitelist" if you're facing any connection issues!
+8. For connection string click connect cluster --> connect your application --> copy connection string.
+      "mongodb+srv://pushpak:<password>@todocluster-d8kxy.mongodb.net/test?retryWrites=true&w=majority"

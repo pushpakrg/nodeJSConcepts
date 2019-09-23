@@ -1,0 +1,36 @@
+Mongoose uses schemas so you can define how your data look like.
+Refer doc for more: https://mongoosejs.com/docs/guide.html
+
+<!-- Installing mongoose package -->
+npm install --save mongoose
+
+<!-- Creating schemas/blueprint ./models/todo.js -->
+const mongoose = require('mongoose');
+const todoSchema = mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  isOpen: {
+    type: Boolean,
+    required: true,
+    default: true
+  },
+});
+
+<!-- Exporting module -->
+module.export = mongoose.model('Todo', todoSchema);
+
+<!-- Importing module -->
+const Todo = require(./models/todo);
+
+<!-- Creating a post instance using nodeJS -->
+app.post("api/todos", (req, res, next) => {
+  const todo = new Todo({
+    title: req.body.title,
+    isOpen: req.body.isOpen
+  });
+  res.status(201).json({
+    message: "Todo added successfully"
+  });
+});

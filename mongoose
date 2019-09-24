@@ -35,3 +35,22 @@ app.post("api/todos", (req, res, next) => {
     message: "Todo added successfully"
   });
 });
+
+<!-- Fetching data -->
+app.get("api/todos", (req, res, next) => {
+  Todo.find().then((documents) => {
+    res.status(200).json({
+      message: "Todos fetched successfully!",
+      todos: documents
+    });
+  });
+});
+
+<!-- Deleting documents -->
+app.delete("api/todos/:id", (req, res, next) => {
+  Todo.deleteOne({id: req.params.id}).then((result) => {
+    res.status(200).json({
+      message: "Todo deleted!"
+    });
+  });
+});
